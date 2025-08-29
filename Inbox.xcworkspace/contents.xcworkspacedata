@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:InboxNetworking">
+   </FileRef>
+   <FileRef
+      location = "group:InboxResources">
+   </FileRef>
+   <FileRef
+      location = "group:InboxKit">
+   </FileRef>
+   <FileRef
+      location = "group:Inbox/Inbox.xcodeproj">
+   </FileRef>
+</Workspace>
