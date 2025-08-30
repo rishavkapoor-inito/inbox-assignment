@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import InboxNetworking
 
 struct ContentView: View {
+    private let networking = MockNetworkingService()
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,6 +19,9 @@ struct ContentView: View {
         }
         .padding()
     }
+    
+    
+    
 }
 
 #Preview {

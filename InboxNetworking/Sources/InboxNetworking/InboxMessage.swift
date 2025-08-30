@@ -7,10 +7,14 @@
 
 import Foundation
 
-public struct InboxMessageDTO: Codable, Identifiable {
+
+public struct InboxMessage: Codable, Identifiable, Sendable {
+
     public let id: Int
     public let title: String
     public let url: String
     public let thumbnailUrl: String
 }
+
+
 
