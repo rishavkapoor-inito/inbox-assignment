@@ -14,7 +14,7 @@ public final class DefaultNetworkingService: NetworkingService {
     private let session: Session
     private let baseURL: URL
     
-    init(session: Session, baseURL: URL) {
+    public init(session: Session = .default, baseURL: URL = URL(string: "https://jsonplaceholder.typicode.com")!) {
         self.session = session
         self.baseURL = baseURL
     }

@@ -6,24 +6,18 @@
 //
 
 import SwiftUI
+import InboxKit
 import InboxNetworking
+import Kingfisher
 
 struct ContentView: View {
-    private let networking = MockNetworkingService()
+    @StateObject private var service = InboxService(networking: DefaultNetworkingService())
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        
+        
     }
     
     
-    
 }
 
-#Preview {
-    ContentView()
-}
