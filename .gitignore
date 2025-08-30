@@ -1,0 +1,59 @@
+# Xcode
+DerivedData/
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xcscmblueprint
+
+# Swift Package Manager
+.swiftpm/
+.build/
+*/.build/
+Package.resolved
+
+# CocoaPods (not used here, but just in case)
+Pods/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# Carthage (not used, but safe to ignore)
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# General macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Thumbnails
+*.swp
+*.lock
+*.tmp
+*.orig
+
+# User-specific
+*.env
+*.local
+
+# Xcode project user-specific settings
+project.xcworkspace/
+xcuserdata/
+
+# Ignore archives & dSYMs
+*.xcarchive
+*.dSYM.zip
+*.dSYM
+
