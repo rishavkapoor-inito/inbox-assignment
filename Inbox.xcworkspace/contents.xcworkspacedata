@@ -2,15 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:InboxNetworking">
+      location = "group:Inbox/Inbox.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:InboxResources">
+      location = "group:InboxNetworking">
    </FileRef>
    <FileRef
       location = "group:InboxKit">
    </FileRef>
    <FileRef
-      location = "group:Inbox/Inbox.xcodeproj">
+      location = "group:InboxResources">
    </FileRef>
 </Workspace>

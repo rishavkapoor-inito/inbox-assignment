@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE55C5642E61C43400A15B83 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE55C5632E61C43400A15B83 /* Kingfisher */; };
+		CE55C5662E61C4A300A15B83 /* InboxKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE55C5652E61C4A300A15B83 /* InboxKit */; };
+		CE55C5682E61C4A300A15B83 /* InboxNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE55C5672E61C4A300A15B83 /* InboxNetworking */; };
+		CE55C56A2E61C4A300A15B83 /* InboxResources in Frameworks */ = {isa = PBXBuildFile; productRef = CE55C5692E61C4A300A15B83 /* InboxResources */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CE81C4512E61A771008F7D82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE55C5682E61C4A300A15B83 /* InboxNetworking in Frameworks */,
+				CE55C56A2E61C4A300A15B83 /* InboxResources in Frameworks */,
+				CE55C5662E61C4A300A15B83 /* InboxKit in Frameworks */,
+				CE55C5642E61C43400A15B83 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE55C5622E61C43400A15B83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE81C43A2E61A770008F7D82 = {
 			isa = PBXGroup;
 			children = (
 				CE81C4452E61A770008F7D82 /* Inbox */,
 				CE81C4532E61A771008F7D82 /* InboxTests */,
 				CE81C45D2E61A771008F7D82 /* InboxUITests */,
+				CE55C5622E61C43400A15B83 /* Frameworks */,
 				CE81C4442E61A770008F7D82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +131,10 @@
 			);
 			name = Inbox;
 			packageProductDependencies = (
+				CE55C5632E61C43400A15B83 /* Kingfisher */,
+				CE55C5652E61C4A300A15B83 /* InboxKit */,
+				CE55C5672E61C4A300A15B83 /* InboxNetworking */,
+				CE55C5692E61C4A300A15B83 /* InboxResources */,
 			);
 			productName = Inbox;
 			productReference = CE81C4432E61A770008F7D82 /* Inbox.app */;
@@ -199,6 +222,7 @@
 				CE81C46E2E61AC79008F7D82 /* XCLocalSwiftPackageReference "../InboxKit" */,
 				CE81C46F2E61AC84008F7D82 /* XCLocalSwiftPackageReference "../InboxNetworking" */,
 				CE81C4702E61AC8C008F7D82 /* XCLocalSwiftPackageReference "../InboxResources" */,
+				CE55C5612E61B96800A15B83 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE81C4442E61A770008F7D82 /* Products */;
@@ -570,6 +594,37 @@
 			relativePath = ../InboxResources;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE55C5612E61B96800A15B83 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE55C5632E61C43400A15B83 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE55C5612E61B96800A15B83 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		CE55C5652E61C4A300A15B83 /* InboxKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InboxKit;
+		};
+		CE55C5672E61C4A300A15B83 /* InboxNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InboxNetworking;
+		};
+		CE55C5692E61C4A300A15B83 /* InboxResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InboxResources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE81C43B2E61A770008F7D82 /* Project object */;
 }

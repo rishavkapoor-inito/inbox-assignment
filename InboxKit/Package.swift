@@ -3,22 +3,25 @@
 
 import PackageDescription
 
+import PackageDescription
+
 let package = Package(
-    name: "InboxKit",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "InboxKit",
-            targets: ["InboxKit"]),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "InboxKit"),
-        .testTarget(
-            name: "InboxKitTests",
-            dependencies: ["InboxKit"]
-        ),
-    ]
+  name: "InboxKit",
+  platforms: [.iOS(.v15)],
+  products: [.library(name: "InboxKit", targets: ["InboxKit"])],
+  dependencies: [
+    .package(path: "../InboxNetworking"),
+    .package(path: "../InboxResources")
+  ],
+  targets: [
+    .target(
+      name: "InboxKit",
+      dependencies: ["InboxNetworking", "InboxResources"],
+      resources: []
+    ),
+    .testTarget(
+      name: "InboxKitTests",
+      dependencies: ["InboxKit", "InboxNetworking", "InboxResources"]
+    )
+  ]
 )
