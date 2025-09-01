@@ -17,7 +17,7 @@ let package = Package(
     .target(
       name: "InboxKit",
       dependencies: ["InboxNetworking", "InboxResources"],
-      resources: []
+      resources: [.process("Sources/InboxKit/InboxModel.xcdatamodeld")]
     ),
     .testTarget(
       name: "InboxKitTests",
