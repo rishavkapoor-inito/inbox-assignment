@@ -32,17 +32,35 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         case .error(let message):
             Text("Error: \(message)")
-        case .loaded(let messages):
-            List(messages) { msg in
-                NavigationLink(destination:DetailView(message: msg)) {
-                    HStack {
-                        KFImage(URL(string: msg.thumbnailURL))
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .cornerRadius(8)
-                        VStack(alignment: .leading) {
-                            Text(msg.title).font(.headline).lineLimit(1)
-                            Text(msg.description).font(.subheadline).lineLimit(2)
+        case .loaded(let messages, let reason):
+            VStack(spacing: 0) {
+                if let reason = reason {
+                    switch reason {
+                    case .offline:
+                        Text("Offline Mode — Showing Cached Data")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.black)
+                        
+                    case .apiError(let msg):
+                        Text("Error fetching data (\(msg)) — Showing Cached Data")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.black)
+                    }
+                }
+                
+                List(messages) { msg in
+                    NavigationLink(destination:DetailView(message: msg)) {
+                        HStack {
+                            KFImage(URL(string: msg.thumbnailURL))
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8)
+                            VStack(alignment: .leading) {
+                                Text(msg.title).font(.headline).lineLimit(1)
+                                Text(msg.description).font(.subheadline).lineLimit(2)
+                            }
                         }
                     }
                 }
