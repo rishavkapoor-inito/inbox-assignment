@@ -8,7 +8,6 @@
 import SwiftUI
 import InboxKit
 
-
 @main
 struct InboxApp: App {
     @MainActor private let persistence = PersistenceController.shared
