@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import InboxNetworking
 import CoreData
+import Kingfisher
 
 @MainActor
 public final class InboxService: ObservableObject{
@@ -36,6 +37,11 @@ public final class InboxService: ObservableObject{
                     case .success(let dtos):
                         let models = dtos.map { InboxMessageResult(dto: $0) }
                         self?.saveToCache(models)
+                        
+                        let urls = models.compactMap { URL(string: $0.thumbnailURL) }
+                        ImagePrefetcher(urls: urls).start()
+                        
+                        
                         self?.state = .loaded(models)
                     case .failure:
                         // load cache
@@ -69,6 +75,7 @@ public final class InboxService: ObservableObject{
 
         private func loadFromCache() -> [InboxMessageResult] {
             let request: NSFetchRequest<CachedInboxMessage> = CachedInboxMessage.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
             guard let results = try? context.fetch(request) else { return [] }
 
             return results.map {
