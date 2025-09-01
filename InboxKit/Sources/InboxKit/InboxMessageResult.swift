@@ -40,19 +40,7 @@ public struct InboxMessageResult: Identifiable, Codable {
             self.title = title
             self.description = description
         
-        let url = thumbnailURL
-
-//        let parts = url.split(separator: "/")
-//
-//        if parts.count >= 2 {
-//            let size = parts[parts.count - 2]   // "150"
-//            let color = parts[parts.count - 1]  // "92c952"
-//            
-//            let converted = "https://dummyimage.com/\(size)x\(size)/\(color)/ffffff"
-//            url = converted
-//        }
-        
-        
+            let url = thumbnailURL
             self.thumbnailURL = url
     }
 }
