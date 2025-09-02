@@ -44,10 +44,6 @@ public final class InboxService: ObservableObject{
                     let models = dtos.map { InboxMessageResult(dto: $0) }
                     self?.saveToCache(models)
                     
-                    let urls = models.compactMap { URL(string: $0.thumbnailURL) }
-                    ImagePrefetcher(urls: urls).start()
-                    
-                    
                     self?.state = .loaded(models, reason: nil)
                 case .failure(let error):
                     // load cache
